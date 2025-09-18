@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        border: 15px solid transparent;
+        width: 250px;
+        padding: 10px 20px;
+      }
+      #round {
+        -webkit-border-image: url(border.jpg) 30 30 round; /* Safari 3.1-5 */
+        -o-border-image: url(border.jpg) 30 30 round; /* Opera 11-12.1 */
+        border-image: url(border.jpg) 30 30 round;
+      }
+      #stretch {
+        -webkit-border-image: url(border.jpg) 30 30 stretch; /* Safari 3.1-5 */
+        -o-border-image: url(border.jpg) 30 30 stretch; /* Opera 11-12.1 */
+        border-image: url(border.jpg) 30 30 stretch;
+      }
+    </style>
+    <style>
+      h1 {
+        text-shadow: 5px 5px 5px #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <strong>Note:</strong> Internet Explorer 10, and earlier versions, do not
+      support the border-image property.
+    </p>
+    <p>The border-image property specifies an image to be used as a border.</p>
+    <div id="round">Here, the image is tiled (repeated) to fill the area.</div>
+    <br />
+    <div id="stretch">Here, the image is stretched to fill the area.</div>
+
+    <p>Here is the image that is used:</p>
+    <img src="border.jpg" />
+
+    <h1>Text-shadow effect!</h1>
+    <p>
+      <b>Note:</b> Internet Explorer 9 and earlier versions, does not support
+      the text shadow property.
+    </p>
+  </body>
+</html>
