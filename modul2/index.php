@@ -52,6 +52,11 @@
     echo $_SERVER['SERVER_PORT'];
 ?>
 
+<?php
+echo '<pre>';
+print_r($_SERVER);
+echo '</pre>';
+?>
 <br>
 <br>
 
@@ -84,15 +89,15 @@
 <!-- VALIDASI FORM -> REQUIRED FIELD -->
 
 <?php
-    $name = $email = $gender = $comment = $website = "";
+    // $name = $email = $gender = $comment = $website = "";
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $name = test_input($_POST["nama"]);
-        $email = test_input($_POST["email"]);
-        $gender = test_input($_POST["gender"]);
-        $comment = test_input($_POST["comment"]);
-        $website = test_input($_POST["website"]);
-    }
+    // if($_SERVER["REQUEST_METHOD"] == "POST"){
+    //     $name = test_input($_POST["nama"]);
+    //     $email = test_input($_POST["email"]);
+    //     $gender = test_input($_POST["gender"]);
+    //     $comment = test_input($_POST["comment"]);
+    //     $website = test_input($_POST["website"]);
+    // }
     // function test_input($data){
     //     $data = trim($data);
     //     $data = stripslashes($data);
@@ -106,7 +111,7 @@
 </style>    
 <?php
 $namaErr = $emailErr = $genderErr = $websiteErr = "";
-$nama = $email = $gender = $website = "";
+$nama = $email = $gender = $website = $comment = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["nama"])) {
@@ -119,6 +124,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $websiteErr = "Website is required";
   } else {
     $website = test_input($_POST["website"]);
+  }
+
+  if (empty($_POST["comment"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["comment"]);
   }
 
   if (empty($_POST["gender"])) {
@@ -137,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 function test_input($data){
         $data = trim($data);
         $data = stripslashes($data);
-        // $data = htmlspecialchars($data);
+        $data = htmlspecialchars($data);
         return $data;
     }
 ?>
@@ -167,7 +178,7 @@ function test_input($data){
 
 <?php
     echo "<h2>Your Input:</h2>";
-    echo $name;
+    echo $nama;
     echo "<br>";
     echo $email;
     echo "<br>";
