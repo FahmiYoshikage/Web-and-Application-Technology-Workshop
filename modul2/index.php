@@ -198,7 +198,7 @@ function test_input($data){
 <!-- Include File -->
 <!-- footer -->
 <h1>Welcome To My Page</h1>
-<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime iusto voluptas similique assumenda debitis delectus laborum quas nesciunt harum beatae ad veritatis, cupiditate rem mollitia ipsa odio repudiandae ab vel!</p>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>Maxime iusto voluptas similique assumenda debitis delectus <br> laborum quas nesciunt harum beatae ad veritatis, <br>cupiditate rem mollitia ipsa odio repudiandae ab vel!</p>
 <?php include 'footer.php'; ?>
 
 <!-- variabel -->
