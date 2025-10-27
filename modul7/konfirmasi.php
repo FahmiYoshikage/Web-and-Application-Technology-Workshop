@@ -13,9 +13,6 @@ $login_user = explode('@', $login_email)[0];
 $makanan = $_SESSION['makanan_dipilih'] ?? 'Tidak ada';
 $minuman = $_SESSION['minuman_dipilih'] ?? 'Tidak ada';
 
-// Note: Session untuk makanan dan minuman belum dihapus, 
-// hanya dihapus saat logout[cite: 149, 150].
-
 ?>
 <!DOCTYPE html>
 <html>
