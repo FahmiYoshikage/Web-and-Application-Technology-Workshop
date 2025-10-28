@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mahasiswa Telkom</title>
+        <script language="javascript">
+            function validasi(form) {
+                if (form.jumlah.value == '') {
+                    alert('Jumlah mahasiswa masih kosong');
+                    form.jumlah.focus();
+                    return false;
+                }
+                if (form.tahun.value == '') {
+                    alert('Tahun masih kosong');
+                    form.tahun.focus();
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Masukkan Jumlah Mahasiswa</h2>
+        <form
+            method="post"
+            action="proses_catat.php"
+            onsubmit="return validasi(this)"
+        >
+            <table>
+                <tr>
+                    <td>Jumlah Mahasiswa</td>
+                    <td>:</td>
+                    <td><input type="text" name="jumlah" /></td>
+                </tr>
+                <tr>
+                    <td>Tahun</td>
+                    <td>:</td>
+                    <td><input type="text" name="tahun" /></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td></td>
+                    <td colspan="2">
+                        <input type="submit" name="submit" value="catat" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br />
+        <a href="garis.php">Lihat Grafik Garis</a>
+        <br />
+        <a href="batang.php">Lihat Grafik Batang</a>
+        <br />
+        <a href="ling.php">Lihat Persentase Mahasiswa</a>
+    </body>
+</html>
