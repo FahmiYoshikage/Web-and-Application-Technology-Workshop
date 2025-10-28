@@ -4,7 +4,7 @@ session_start();
 
 // Cek autentikasi
 if (!isset($_SESSION['logged_in_email'])) {
-    header('Location: login.php');
+    header('Location: makananForm.php');
     exit;
 }
 

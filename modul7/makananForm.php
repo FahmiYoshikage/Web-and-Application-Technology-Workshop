@@ -1,6 +1,10 @@
 <?php
 // login.php
 session_start();
+// Tambahkan header untuk mencegah caching sehingga tombol Back tidak menampilkan halaman yang di-cache
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1
+header("Pragma: no-cache"); // HTTP 1.0
+header("Expires: 0"); // Proxies
 // Jika sudah login, alihkan ke halaman utama
 if (isset($_SESSION['logged_in_email'])) {
 header('Location: proses_makanan.php'); // Langsung ke pemesanan

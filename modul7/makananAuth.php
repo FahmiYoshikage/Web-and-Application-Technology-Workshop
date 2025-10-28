@@ -19,18 +19,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['logged_in_email'] = $email;
         
         // Alihkan ke halaman pemesanan (header) [cite: 165]
-        header('Location: proses_makanan.php');
+        header('Location: proses_makanan.php'); 
         exit;
     } else {
         // Login Gagal [cite: 38]
         $_SESSION['login_error'] = "Account anda belum terdaftar di web kami."; //[cite: 164]
         // Alihkan kembali ke halaman login (header)
-        header('Location: makananAuth.php');
+        header('Location: makananForm.php');
         exit;
     }
 } else {
     // Jika diakses tanpa POST, alihkan ke login
-    header('Location: makananAuth.php');
+    header('Location: makananForm.php');
     exit;
 }
 ?>

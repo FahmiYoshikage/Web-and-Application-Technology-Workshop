@@ -1,36 +1,30 @@
 <?php
-// proses_makanan.php
-session_start(); // Memulai session
-// Tambahkan header untuk mencegah caching halaman yang sensitif
-header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1
-header("Pragma: no-cache"); // HTTP 1.0
-header("Expires: 0"); // Proxies
+// makanan_cookie.php
 
-// Cek autentikasi [cite: 37]
-if (!isset($_SESSION['logged_in_email'])) {
-    // alihkan ke form login yang benar
-    header('Location: makananForm.php');
+// Cek autentikasi (periksa cookie)
+if (!isset($_COOKIE['logged_in_email'])) {
+    header('Location: login_cookie.php');
     exit;
 }
 
-$login_email = $_SESSION['logged_in_email'];
-$login_user = explode('@', $login_email)[0]; // Ambil username (misal 'fakhri')
+$login_email = $_COOKIE['logged_in_email'];
+$login_user = explode('@', $login_email)[0]; // Ambil username
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pemesanan Makanan</title>
+    <title>Pemesanan Makanan (Cookie)</title>
 </head>
 <body>
 <table border="1" width="500">
     <tr>
-        <td width="100"><a href="logout.php">logout</a> </td>
+        <td width="100"><a href="logout_cookie.php">logout</a> </td>
         <td>
             <h1>HOMEPAGE PEMESANAN</h1>
             Login anda: <?php echo htmlspecialchars($login_user); ?>
             <hr>
-            <form method="post" action="proses_minuman.php">
+            <form method="post" action="minuman_cookie.php">
                 JENIS MAKANAN: 
                 <br>
                 <input type="checkbox" name="makanan[]" value="Soto Madura"> Soto Madura 
