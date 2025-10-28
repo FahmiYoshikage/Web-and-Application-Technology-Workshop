@@ -51,7 +51,7 @@ $koneksi->close();
             series: [{
                 name: 'Jumlah Mahasiswa',
                 /* Tipe diubah menjadi 'column' untuk grafik batang */
-                type: 'column', 
+                type: 'bar', 
                 yAxis: 0,
                 data: [<?php echo $aray ?>] 
             }]
